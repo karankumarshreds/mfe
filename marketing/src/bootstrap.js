@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/App';
 
 // Mount function to render all the data onto index.html
 const mount = (el) => {
-  ReactDOM.render(<h1>Marketing</h1>, el);
+  ReactDOM.render(<App />, el);
 };
 
 // If we are in the development mode AND in isolation
