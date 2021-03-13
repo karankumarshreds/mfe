@@ -26,7 +26,7 @@ const devConfig = {
       exposes: {
         './MarketingApp': './src/bootstrap',
       },
-      // shared: []
+      shared: ['react', 'react-dom'],
     }),
   ],
 };
