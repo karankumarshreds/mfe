@@ -21,10 +21,10 @@ const devConfig = {
     }),
     new ModuleFederationPlugin({
       name: 'marketing',
-      fileName: 'remoteEntry.js',
+      filename: 'remoteEntry.js',
       // outside world will consume
       exposes: {
-        './marketing': './src/bootstrap',
+        './MarketingApp': './src/bootstrap',
       },
       // shared: []
     }),
