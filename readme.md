@@ -11,3 +11,9 @@ The way you do that is adding in `shared: ['<module_name>']` property inside the
 So what we do is, we create a **bootstrap** file where we keep all our `index.js` file's code and import bootstrap inside our index.js. _This way it tells webpack to load all the imports/modules before sharing them across the browser_.
 
 Further explanation <a href="https://webpack.js.org/concepts/module-federation/">here</a>
+
+## Deployment
+
+1. We want to deploy each microfrontend independently (including the container)
+2. Location of child app remoteEntry.js files must be known at build time. (just the location, we will use it at the runtime only)
+3. Need CICD for each service
