@@ -1,0 +1,28 @@
+# name of the workflow
+name: deploy-container
+
+# which events do we watch for
+on:
+  push:
+    branches:
+      - master
+    # watch for changes on specific files
+    paths:
+      - 'packages/container/**'
+
+jobs:
+  # name of the job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # loads/checkouts all the code inside this temp container to run all the steps
+      - uses: actions/checkout@v2
+      - run: cd container && npm install
+      - run: npm run build
+
+      # gives access to aws cli
+      - uses: chrislennon/action-aws-cli@v1.1
+      - run: aws s2 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
