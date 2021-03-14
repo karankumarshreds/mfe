@@ -4,7 +4,7 @@ const commonConfig = require('./webpack.common');
 const packageJson = require('../package.json');
 
 // will be altered by the ci/cd pipeline
-const DOMAIN = process.env.PRODUCTION.DOMAIN;
+const DOMAIN = process.env.PRODUCTION_DOMAIN || 'http://localhost:8081';
 
 const prodConfig = {
   mode: 'production',
@@ -23,6 +23,9 @@ const prodConfig = {
         // the same domain === s3 bucket for this example
         marketing: `marketing@${DOMAIN}/marketing/remoteEntry.js`,
       },
+      shared: packageJson.dependencies,
     }),
   ],
 };
+
+module.exports = merge(commonConfig, prodConfig);
