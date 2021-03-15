@@ -43,4 +43,9 @@ module.exports = merge(commonConfig, prodConfig);
  * ***********************************************
  * Uncaught SyntaxError: Unexpected token '<'
  * ***********************************************
+ * Hence, putting that it will have a filename
+ * of something like 'main.<random-hash>.js'
+ * and will be loaded as
+ * ***********************************************
+ * s3:url/container/latest/main.<random-hash>.js
  */
