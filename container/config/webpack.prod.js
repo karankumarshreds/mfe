@@ -13,8 +13,8 @@ const prodConfig = {
     // the following format while naming them
     // name + hash value (to overcome caching issue)
     filename: '[name].[contenthash].js',
+    publicPath: '/container/latest/',
   },
-  publicPath: '/container/latest/',
   plugins: [
     new ModuleFederationPlugin({
       name: 'container',
