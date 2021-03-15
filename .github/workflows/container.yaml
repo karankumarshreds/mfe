@@ -10,6 +10,11 @@ on:
     paths:
       - 'container/**'
 
+# so that we don't have to 'cd container' on each step
+defaults:
+  run:
+    working-directory: container
+
 jobs:
   # name of the job
   build:
@@ -17,7 +22,7 @@ jobs:
     steps:
       # loads/checkouts all the code inside this temp container to run all the steps
       - uses: actions/checkout@v2
-      - run: cd container && npm install
+      - run: npm install
       - run: npm run build
 
       # gives access to aws cli
