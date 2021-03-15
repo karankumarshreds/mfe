@@ -3,6 +3,7 @@ name: deploy-container
 
 # which events do we watch for
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
