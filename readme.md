@@ -31,3 +31,7 @@ It helps us tell Cloudfront to use latest version of certain files as soon as th
 There is another way to get around it and that is to have a unique name (hash/version) of the file so that CDN treats it as a new file.
 
 **CAVEAT** : You can use this for all your JS files using a hash values for their names. BUT you cannot do the same for your `index.html` file unfortunately. So the only solution for your index.html to show changes asap is to using the `invalidation` method only.
+
+### Step 1
+
+<p align="center"><img src="" width="650"/></p>
