@@ -17,3 +17,15 @@ Further explanation <a href="https://webpack.js.org/concepts/module-federation/"
 1. We want to deploy each microfrontend independently (including the container)
 2. Location of child app remoteEntry.js files must be known at build time. (just the location, we will use it at the runtime only)
 3. Need CICD for each service
+
+## Caching issue
+
+If we upload the latest code, we might not see it reflecting on the browser because of caching (cloudfront)
+
+We can get rid of this using something called **invalidations** that can be configured from the cloudfront section on AWS.
+
+It helps us tell Cloudfront to use latest version of certain files as soon as they are updated.
+
+### [OR]
+
+There is another way to get around it and that is to have a unique name (hash/version) of the file so that CDN treats it as a new file.
