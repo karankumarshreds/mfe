@@ -8,7 +8,7 @@ on:
       - master
     # watch for changes on specific files
     paths:
-      - 'packages/container/**'
+      - 'container/**'
 
 jobs:
   # name of the job
@@ -22,7 +22,7 @@ jobs:
 
       # gives access to aws cli
       - uses: chrislennon/action-aws-cli@v1.1
-      - run: aws s2 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
+      - run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
