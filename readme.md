@@ -34,4 +34,4 @@ There is another way to get around it and that is to have a unique name (hash/ve
 
 ### Step 1
 
-<p align="center"><img src="" width="650"/></p>
+<p align="center"><img src="https://github.com/karankumarshreds/mfe/blob/master/diagrams/invalidation1.png" width="650"/></p>
