@@ -42,4 +42,20 @@ Then simply add in the name of the file you want to invalidate.
 
 <p align="center"><img src="https://github.com/karankumarshreds/mfe/blob/master/diagrams/invalidation2.png" width="600"/></p>
 
+### [OR]
+
+You can **automate** this using your action workflow (command line using aws-cli):
+
+```yaml
+- name: S3 invalidation for index.hmtl
+  # gives access to aws cli
+  uses: ItsKarma/aws-cli@v1.70.0
+  with:
+    args: cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "container/latest/index.html"
+  env:
+    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    AWS_DEFAULT_REGION: 'ap-south-1'
+```
+
 <hr />
