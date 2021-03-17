@@ -54,4 +54,4 @@ jobs:
           aws-region: 'ap-south-1'
 
       - name: S3 invalidation for index.html
-        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "container/latest/index.html"
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/container/latest/index.html"
