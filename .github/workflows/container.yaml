@@ -26,26 +26,16 @@ jobs:
       - run: npm install
       - run: npm run build
 
-      # - name: S3 Sync
-      #   # gives access to aws cli
-      #   uses: ItsKarma/aws-cli@v1.70.0
-      #   with:
-      #     args: s3 sync container/dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
-      #   env:
-      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      #     AWS_DEFAULT_REGION: 'ap-south-1'
-
-      # - name: S3 invalidation for index.hmtl
-      #   # gives access to aws cli
-      #   uses: ItsKarma/aws-cli@v1.70.0
-      #   with:
-      #     args: cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "container/latest/index.html"
-      #   env:
-      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      #     AWS_DEFAULT_REGION: 'ap-south-1'
-      # - run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "container/latest/index.html"
+      - name: S3 Sync
+        # gives access to aws cli
+        uses: ItsKarma/aws-cli@v1.70.0
+        with:
+          args: s3 sync container/dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: 'ap-south-1'
+      
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
