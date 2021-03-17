@@ -54,6 +54,8 @@ jobs:
           aws-region: 'ap-south-1'
 
       - name: S3 Sync files
+        run: echo "pwd" && ls
+        run: echo "prv" && cd ../ && ls 
         run: aws s3 sync /container/dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
 
       - name: S3 invalidation for index.html
