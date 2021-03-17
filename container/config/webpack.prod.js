@@ -22,7 +22,7 @@ const prodConfig = {
         // we are assuming that the remoteEntry for marketing
         // will be nested inside the folder = 'marketing' in
         // the same domain === s3 bucket for this example
-        marketing: `marketing@${DOMAIN}/marketing/remoteEntry.js`,
+        marketing: `marketing@${DOMAIN}/marketing/latest/remoteEntry.js`,
       },
       shared: packageJson.dependencies,
     }),

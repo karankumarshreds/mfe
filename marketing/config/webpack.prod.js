@@ -7,6 +7,7 @@ const prodConfig = {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].js',
+    publicPath: '/marketing/latest/',
   },
   plugins: [
     new ModuleFederationPlugin({
@@ -21,3 +22,14 @@ const prodConfig = {
 };
 
 module.exports = merge(commonConfig, prodConfig);
+
+/**
+ * @publicPath
+ * setting /marketing/latest/ prefix such that remoteEntry.js
+ * file which points other services to the build files of our
+ * project will point to the correct domain.
+ * Which is <domain_name>/marketing/latest/ ,, because this is
+ * where our marketing files are in the s3 bucket
+ * Otherwise, it would have pointed to <domain>/main.js etc
+ * which is wrong.
+ */

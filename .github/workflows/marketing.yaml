@@ -1,5 +1,5 @@
 # name of the workflow
-name: deploy-container
+name: deploy-marketing
 
 # which events do we watch for
 on:
@@ -9,25 +9,22 @@ on:
       - master
     # watch for changes on specific files
     paths:
-      - 'container/**'
+      - 'marketing/**'
 
-# so that we don't have to 'cd container' on each step
+# so that we don't have to 'cd marketing' on each step
 defaults:
   run:
-    working-directory: container
+    working-directory: marketing
 
 jobs:
   # name of the job
   build:
     runs-on: ubuntu-latest
     steps:
-      # loads/checkouts all the code inside this temp container to run all the steps
+      # loads/checkouts all the code inside this temp marketing to run all the steps
       - uses: actions/checkout@v2
       - run: npm install
       - run: npm run build
-        # SETTING DOMAIN ENV FOR BUILD STEP
-        env:
-          PRODUCTION_DOMAIN: ${{secrets.PRODUCTION_DOMAIN}}
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -37,7 +34,7 @@ jobs:
           aws-region: 'ap-south-1'
 
       - name: S3 Sync files
-        run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
+        run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/marketing/latest
 
-      - name: S3 invalidation for index.html
-        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/container/latest/index.html"
+      - name: S3 invalidation for remoteEntry.js
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/marketing/latest/remoteEntry.js"
