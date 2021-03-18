@@ -32,4 +32,4 @@ module.exports = merge(commonConfig, prodConfig);
  * where our marketing files are in the s3 bucket
  * Otherwise, it would have pointed to <domain>/main.js etc
  * which is wrong.
- */
+ */ 
