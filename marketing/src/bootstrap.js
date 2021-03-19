@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import { createMemoryHistory } from 'history';
@@ -21,5 +21,5 @@ if (process.env.NODE_ENV === 'development') {
 
 // Otherwise, we would assume that we are being run by the
 // container and we will export this mount function for the
-// contianer
+// container to render it whereever
 export { mount };
