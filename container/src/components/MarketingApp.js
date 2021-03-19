@@ -16,7 +16,11 @@ const MarketingApp = () => {
       // Using this we will change/update our history object
       // which is nothing but our browser history (to update url)
       onNavigate: ({ pathname: nextPathname }) => {
-        history.push(nextPathname);
+        // check if the current path name is not equal to child path name
+        const { pathname: containerPathName } = history.location;
+        if (containerPathName !== nextPathname) {
+          history.push(nextPathname);
+        }
       },
     });
   }, []);
