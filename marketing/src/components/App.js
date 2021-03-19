@@ -16,10 +16,10 @@ const generateClassName = createGenerateClassName({
   productionPrefix: 'ma',
 });
 
-const App = () => {
+const App = ({ history }) => {
   return (
     <StylesProvider generateClassName={generateClassName}>
-      <Router>
+      <Router history={history}>
         <Switch>
           <Route exact path="/pricing" component={Pricing} />
           <Route exact path="/" component={Landing} />
