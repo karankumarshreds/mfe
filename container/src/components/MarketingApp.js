@@ -1,14 +1,22 @@
 import React, { useRef, useEffect } from 'react';
 import { mount } from 'marketing/MarketingApp';
+import { useHistory } from 'react-router-dom';
 
 const MarketingApp = () => {
   const ref = useRef(null);
+  const history = useHistory();
 
   useEffect(() => {
     // reference to the html element
     mount(ref.current, {
-      onNavigate: () => {
-        console.log('Navigation noticed from the container application');
+      // location === object given to us by the listen function
+      // which we used to invoke this callback and has information
+      // of where the router (child memory router) navigated to
+      // destructuring @location's pathname and renaming it
+      // Using this we will change/update our history object
+      // which is nothing but our browser history (to update url)
+      onNavigate: ({ pathname: nextPathname }) => {
+        history.push(nextPathname);
       },
     });
   }, []);

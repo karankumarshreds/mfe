@@ -4,8 +4,9 @@ import App from './components/App';
 import { createMemoryHistory } from 'history';
 
 // Mount function to render all the data onto index.html
-const mount = (el) => {
+const mount = (el, { onNavigate }) => {
   const history = createMemoryHistory();
+  history.listen(onNavigate);
   ReactDOM.render(<App history={history} />, el);
 };
 
