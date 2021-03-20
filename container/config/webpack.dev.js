@@ -7,6 +7,9 @@ const packageJson = require('../package.json');
 // config for the development environment
 const devConfig = {
   mode: 'development',
+  output: {
+    publicPath: 'http://localhost:8080/',
+  },
   devServer: {
     port: 8080,
     //
