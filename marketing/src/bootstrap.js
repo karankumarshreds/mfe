@@ -6,6 +6,13 @@ import { createMemoryHistory } from 'history';
 // Mount function to render all the data onto index.html
 const mount = (el, { onNavigate }) => {
   const history = createMemoryHistory();
+  // history object has an event listener tied to it called listen
+  // whenever some navigation occurs, this history object will call
+  // or invoke any function provided to the listen method with an
+  // argument/parameter(for the invoked function) which would contain
+  // current pathname of the memoryhistory of this child application
+  // This way container app would take that and update the browser
+  // url for the user based on this current path name
   history.listen(onNavigate);
   ReactDOM.render(<App history={history} />, el);
 };
