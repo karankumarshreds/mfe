@@ -4,6 +4,13 @@ import App from './components/App';
 import { createMemoryHistory } from 'history';
 
 // Mount function to render all the data onto index.html
+/**
+ * @onNavigate is the callback function passed back to this mount
+ * function from the container application when it was being invoked
+ * We would only have this funtion here if mount function is run from
+ * container. Which means, this would be undefined it this application
+ * is run in isolation
+ */
 const mount = (el, { onNavigate }) => {
   const history = createMemoryHistory();
   // history object has an event listener tied to it called listen
