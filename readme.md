@@ -59,3 +59,5 @@ You can **automate** this using your action workflow (command line using aws-cli
 ```
 
 <hr />
+
+npm i -D webpack-cli @webpack-cli/serve

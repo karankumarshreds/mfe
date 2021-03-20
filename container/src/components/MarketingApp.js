@@ -8,7 +8,7 @@ const MarketingApp = () => {
 
   useEffect(() => {
     // reference to the html element
-    mount(ref.current, {
+    const { onParentNavigate } = mount(ref.current, {
       // location === object given to us by the listen function
       // which we used to invoke this callback and has information
       // of where the router (child memory router) navigated to
@@ -23,6 +23,16 @@ const MarketingApp = () => {
         }
       },
     });
+
+    // this way you can pass a callback function inside the listen thing
+    // and it will be invoked automatically the history (current route)
+    // gets changed. ALSO, it sends the an object as the param to the CB
+    // which contains the information about the current route path
+    /**
+     * We are doing this to tell the child component we have changed the
+     * url (because user clicked on a link goverend by us)
+     */
+    history.listen(onParentNavigate);
   }, []);
 
   return <div ref={ref}></div>;

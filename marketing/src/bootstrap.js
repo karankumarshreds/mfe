@@ -21,9 +21,24 @@ const mount = (el, { onNavigate }) => {
   // This way container app would take that and update the browser
   // url for the user based on this current path name
   if (onNavigate) {
+    // this is for us to talk the parent and send the route
+    // information to parent
     history.listen(onNavigate);
   }
   ReactDOM.render(<App history={history} />, el);
+
+  return {
+    // this function is for the parent to talk and send route
+    // information to us
+    onParentNavigate: ({ pathname: nextPathname }) => {
+      const { pathname } = history.location;
+      // only if our route is not updated as per containers route
+      if (pathname !== nextPathname) {
+        // update our local route
+        history.push(nextPathname);
+      }
+    },
+  };
 };
 
 // If we are in the development mode AND in isolation
