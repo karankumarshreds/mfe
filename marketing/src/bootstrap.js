@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
-import { createMemoryHistory } from 'history';
+import { createMemoryHistory, createBrowserHistory } from 'history';
 
 // Mount function to render all the data onto index.html
 /**
@@ -11,8 +11,8 @@ import { createMemoryHistory } from 'history';
  * container. Which means, this would be undefined it this application
  * is run in isolation
  */
-const mount = (el, { onNavigate }) => {
-  const history = createMemoryHistory();
+const mount = (el, { onNavigate, defaultHistory }) => {
+  const history = defaultHistory || createMemoryHistory();
   // history object has an event listener tied to it called listen
   // whenever some navigation occurs, this history object will call
   // or invoke any function provided to the listen method with an
@@ -47,7 +47,8 @@ if (process.env.NODE_ENV === 'development') {
   const el = document.querySelector('#_marketing-dev-root');
   // make sure we are running in isolation
   if (el) {
-    mount(el, {});
+    // this will be passed only if we are running in dev && in isolation
+    mount(el, { defaultHistory: createBrowserHistory() });
   }
 }
 
