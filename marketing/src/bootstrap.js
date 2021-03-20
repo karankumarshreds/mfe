@@ -20,7 +20,9 @@ const mount = (el, { onNavigate }) => {
   // current pathname of the memoryhistory of this child application
   // This way container app would take that and update the browser
   // url for the user based on this current path name
-  history.listen(onNavigate);
+  if (onNavigate) {
+    history.listen(onNavigate);
+  }
   ReactDOM.render(<App history={history} />, el);
 };
 
@@ -30,7 +32,7 @@ if (process.env.NODE_ENV === 'development') {
   const el = document.querySelector('#_marketing-dev-root');
   // make sure we are running in isolation
   if (el) {
-    mount(el);
+    mount(el, {});
   }
 }
 
