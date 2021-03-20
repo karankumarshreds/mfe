@@ -11,8 +11,12 @@ import { createMemoryHistory, createBrowserHistory } from 'history';
  * container. Which means, this would be undefined it this application
  * is run in isolation
  */
-const mount = (el, { onNavigate, defaultHistory }) => {
-  const history = defaultHistory || createMemoryHistory();
+const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
+  const history =
+    defaultHistory ||
+    createMemoryHistory({
+      initialEntries: [initialPath],
+    });
   // history object has an event listener tied to it called listen
   // whenever some navigation occurs, this history object will call
   // or invoke any function provided to the listen method with an

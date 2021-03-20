@@ -9,6 +9,7 @@ const MarketingApp = () => {
   useEffect(() => {
     // reference to the html element
     const { onParentNavigate } = mount(ref.current, {
+      initialPath: history.location.pathname,
       // location === object given to us by the listen function
       // which we used to invoke this callback and has information
       // of where the router (child memory router) navigated to

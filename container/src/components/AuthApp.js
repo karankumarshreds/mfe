@@ -1,5 +1,6 @@
-import React, { useEffect, useHistory, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { mount } from 'auth/AuthApp';
+import { useHistory } from 'react-router-dom';
 
 const AuthApp = () => {
   const ref = useRef(null);
@@ -7,6 +8,7 @@ const AuthApp = () => {
 
   useEffect(() => {
     const { onParentNavigate } = mount(ref.current, {
+      initialPath: history.location.pathname,
       onNavigate: ({ pathname: nextPathname }) => {
         if (history.pathname !== nextPathname) {
           history.push(nextPathname);
