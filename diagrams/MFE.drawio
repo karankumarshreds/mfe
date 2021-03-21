@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-21T20:53:40.127Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" etag="Oif_LEExfpiDN8s_hy2M" version="14.4.9" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-03-21T20:53:59.864Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" etag="csbhnkhkdIgkFCl8tF_D" version="14.4.9" type="github" pages="2">
   <diagram id="MLztSlsesKU8g3Fmu0se" name="Microservices">
     <mxGraphModel dx="861" dy="487" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -105,16 +105,16 @@
           <mxGeometry x="688.9974430057921" y="129.99914201407597" width="87" height="43" as="geometry" />
         </mxCell>
         <mxCell id="hOD7QAb-5Pu8wq74bjgg-12" value="&lt;b&gt;&lt;font face=&quot;Poppins&quot; data-font-src=&quot;https://fonts.googleapis.com/css?family=Poppins&quot; style=&quot;font-size: 27px&quot;&gt;&amp;gt; Easy Rollbacks&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="hOD7QAb-5Pu8wq74bjgg-1">
-          <mxGeometry x="451" y="249" width="228" height="23" as="geometry" />
+          <mxGeometry x="452.5" y="245" width="228" height="23" as="geometry" />
         </mxCell>
         <mxCell id="hOD7QAb-5Pu8wq74bjgg-14" value="&lt;span style=&quot;color: rgb(51, 51, 51); font-family: &amp;quot;segoe ui emoji&amp;quot;; font-size: 49px; font-style: normal; font-weight: 400; letter-spacing: normal; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline; float: none;&quot;&gt;í ½í±¨â€í ¾í¶½&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="hOD7QAb-5Pu8wq74bjgg-1">
-          <mxGeometry x="685.99768613618" y="218.99703331256737" width="79" height="43" as="geometry" />
+          <mxGeometry x="687.49768613618" y="214.99703331256737" width="79" height="43" as="geometry" />
         </mxCell>
         <mxCell id="hOD7QAb-5Pu8wq74bjgg-17" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/rocket_1f680.png;" vertex="1" parent="hOD7QAb-5Pu8wq74bjgg-1">
-          <mxGeometry x="633" y="327" width="53" height="53" as="geometry" />
+          <mxGeometry x="634.5" y="317" width="53" height="53" as="geometry" />
         </mxCell>
         <mxCell id="hOD7QAb-5Pu8wq74bjgg-18" value="&lt;b&gt;&lt;font face=&quot;Poppins&quot; data-font-src=&quot;https://fonts.googleapis.com/css?family=Poppins&quot; style=&quot;font-size: 27px&quot;&gt;&amp;gt; Scalability&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="hOD7QAb-5Pu8wq74bjgg-1">
-          <mxGeometry x="451" y="342" width="170" height="23" as="geometry" />
+          <mxGeometry x="452.5" y="332" width="170" height="23" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
