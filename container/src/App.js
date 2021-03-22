@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { StylesProvider, createGenerateClassName } from '@material-ui/core';
-import MarketingApp from './components/MarketingApp';
+// components
+import Progress from './components/Progress';
 import Header from './components/Header';
-import AuthApp from './components/AuthApp';
 
 /**
  * This makes sure that all the elements using inline styles
@@ -16,18 +16,35 @@ const generateClassName = createGenerateClassName({
   productionPrefix: 'cont',
 });
 
+// used instead of the component itself
+const MarketingLazy = lazy(() => import('./components/MarketingApp'));
+const AuthLazy = lazy(() => import('./components/AuthApp'));
+
 const App = () => {
   return (
     <BrowserRouter>
       <StylesProvider generateClassName={generateClassName}>
         <Header />
-        <Switch>
-          <Route path="/auth" component={AuthApp} />
-          <Route path="/" component={MarketingApp} />
-        </Switch>
+        <Suspense fallback={<Progress />}>
+          <Switch>
+            <Route path="/auth" component={AuthLazy} />
+            <Route path="/" component={MarketingLazy} />
+          </Switch>
+        </Suspense>
       </StylesProvider>
     </BrowserRouter>
   );
 };
 
 export default App;
+
+/**
+ * @Suspense a react component
+ * Takes in a prop fallback which can be any JSX which will be shown
+ * to the user while the lazy loading is taking place
+ * @lazy a function helps us do lazy loading
+ * ////// meaning? /////
+ * Work together to help us load the components (JS files) only when
+ * the user goes to the page/component which ACTUALLY requires the
+ * component(JS files) to be loaded
+ */
