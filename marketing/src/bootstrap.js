@@ -15,6 +15,13 @@ const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
   const history =
     defaultHistory ||
     createMemoryHistory({
+      // if we don't add this, the container browser router will update
+      // the first time and mount this application and the first time
+      // the memory router of THIS application starts, it will be at '/'
+      // by default which would require user to click on the button/link
+      // twice. Hence, by doing this we are setting the initial path of
+      // the memory router to be whatever is passed down by the container
+      // while trying to mount this application
       initialEntries: [initialPath],
     });
   // history object has an event listener tied to it called listen
