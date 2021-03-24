@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-24T17:34:52.409Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" etag="rCjfHOdutxrtwD5vf7P8" version="14.4.9" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-03-24T17:37:12.961Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" etag="_4aXAheJ7AkEvJC1LLew" version="14.4.9" type="github" pages="4">
   <diagram id="MLztSlsesKU8g3Fmu0se" name="Microservices">
     <mxGraphModel dx="1248" dy="706" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -286,9 +286,6 @@
             <mxPoint x="607" y="323" as="sourcePoint" />
             <mxPoint x="733" y="323" as="targetPoint" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="E0n9A3UGQGpXD5xYR3gy-21" value="Text" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="E0n9A3UGQGpXD5xYR3gy-1">
-          <mxGeometry x="467" y="358" width="40" height="20" as="geometry" />
         </mxCell>
         <mxCell id="E0n9A3UGQGpXD5xYR3gy-22" value="&lt;font face=&quot;Poppins&quot; data-font-src=&quot;https://fonts.googleapis.com/css?family=Poppins&quot; size=&quot;1&quot;&gt;&lt;b style=&quot;font-size: 17px&quot;&gt;CDN&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="E0n9A3UGQGpXD5xYR3gy-1">
           <mxGeometry x="641" y="286" width="47" height="20" as="geometry" />
