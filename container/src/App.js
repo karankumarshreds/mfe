@@ -22,13 +22,10 @@ const AuthLazy = lazy(() => import('./components/AuthApp'));
 
 const App = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
-  if (isSignedIn) {
-    alert('User just logged in');
-  }
   return (
     <BrowserRouter>
       <StylesProvider generateClassName={generateClassName}>
-        <Header />
+        <Header isSignedIn={isSignedIn} onSignOut={() => setIsSignedIn(false)} />
         <Suspense fallback={<Progress />}>
           <Switch>
             <Route path="/auth">

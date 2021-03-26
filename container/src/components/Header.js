@@ -32,9 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
   cardHeader: {
     backgroundColor:
-      theme.palette.type === 'light'
-        ? theme.palette.grey[200]
-        : theme.palette.grey[700],
+      theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[700],
   },
   cardPricing: {
     display: 'flex',
@@ -54,31 +52,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Header({ signedIn, onSignOut }) {
+export default function Header({ isSignedIn, onSignOut }) {
   const classes = useStyles();
 
   const onClick = () => {
-    if (signedIn && onSignOut) {
+    if (isSignedIn && onSignOut) {
       onSignOut();
     }
   };
 
   return (
     <React.Fragment>
-      <AppBar
-        position="static"
-        color="default"
-        elevation={0}
-        className={classes.appBar}
-      >
+      <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
-          <Typography
-            variant="h6"
-            color="inherit"
-            noWrap
-            component={RouterLink}
-            to="/"
-          >
+          <Typography variant="h6" color="inherit" noWrap component={RouterLink} to="/">
             App
           </Typography>
           <Button
@@ -86,10 +73,9 @@ export default function Header({ signedIn, onSignOut }) {
             variant="outlined"
             className={classes.link}
             component={RouterLink}
-            to={signedIn ? '/' : '/auth/signin'}
-            onClick={onClick}
-          >
-            {signedIn ? 'Logout' : 'Login'}
+            to={isSignedIn ? '/' : '/auth/signin'}
+            onClick={onClick}>
+            {isSignedIn ? 'Logout' : 'Login'}
           </Button>
         </Toolbar>
       </AppBar>
