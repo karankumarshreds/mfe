@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => {
     bar: {
       width: '100%',
       '& > * + *': {
-        marginTop: theme.spacing(theme),
+        marginTop: theme.spacing(),
       },
     },
   });
